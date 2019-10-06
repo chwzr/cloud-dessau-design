@@ -22,6 +22,12 @@
   to   { opacity: 1; }
 }
 
+.board{
+  height: 400px;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
 $primary: #000;
 
 $family-sans-serif: "Product Sans", sans-serif;

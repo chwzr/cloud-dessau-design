@@ -7,10 +7,11 @@ const BoardWriter = () => {
   const inputEl = useRef(null);
 
   const sendMessage = () => {
-    
-    db.collection('board').add({content: inputEl.current.value, created: new Date()}).then(()=>{
-      inputEl.current.value = ""
-    })
+    if(inputEl.current.value){
+      db.collection('board').add({content: inputEl.current.value, created: new Date()}).then(()=>{
+        inputEl.current.value = ""
+      })
+    }
   }
 
   return (
