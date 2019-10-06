@@ -22,11 +22,10 @@ const Push = () => {
         <div className="button" onClick={getToken}>
           GET PUSH
         </div>
+
         {process.browser &&   <div className="code">
             {window.pushtoken}
-        </div>
-        
-        }
+        </div> }
       </div>
     </>
   )
