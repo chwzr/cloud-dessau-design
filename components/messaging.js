@@ -23,9 +23,9 @@ const Push = () => {
           GET PUSH
         </div>
 
-        {process.browser &&   <div className="code">
-            {window.pushtoken}
-        </div> }
+        <div className="code">
+          {process.browser && window.pushtoken}
+        </div> 
       </div>
     </>
   )
