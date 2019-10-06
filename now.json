@@ -3,7 +3,7 @@
   "routes": [	
     {	
       "src": "^/firebase-messaging-sw.js$",	
-      "dest": "/_next/static/firebase-messaging-sw.js",
+      "dest": "/static/firebase-messaging-sw.js",
       "headers": {
         "cache-control": "public, max-age=43200, immutable",
         "Service-Worker-Allowed": "/"
