@@ -4,6 +4,9 @@ import Head from 'next/head'
 import '../styles/index.scss'
 import Logo from '../static/cloud_logo.svg'
 
+import '../components/firebase'
+import Messaging from '../components/messaging'
+
 const Home = () => (
   <div>
     <Head>
@@ -23,6 +26,7 @@ const Home = () => (
           A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
         </h2>
       </div>
+      <Messaging></Messaging>
     </section>
   </div>
 )
