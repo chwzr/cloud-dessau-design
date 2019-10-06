@@ -8,6 +8,12 @@ const Home = () => (
   <div>
     <Head>
       <title>[cloud]</title>
+      <link rel="manifest" href="/static/manifest.json" />
+      <meta name="theme-color" content="#72B340" />
+      <meta
+        name="description"
+        content="make your Next.js application work offline using service workers via Google's workbox"
+      />
     </Head>
 
     <section className="section">
