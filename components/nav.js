@@ -5,11 +5,15 @@ import Logo from '../static/cloud_logo.svg'
 const Nav = () => (
   <nav className="navbar is-spaced" role="navigation" aria-label="main navigation">
     <div className="container">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
+      <div className="navbar-brand">
+        <a className="navbar-item" href="/">
           <Logo width="112" height="28" className="logo"/>
         </a>
       </div>
+
+
+
+      
 
     </div>
   </nav>

@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import "firebase/analytics";
 import "firebase/messaging";
+import "firebase/firestore";
 
 
 var firebaseConfig = {
@@ -22,7 +23,7 @@ try{
 }
 
 
-
+export const db = firebase.firestore();
 
 if(process.browser){
   var messaging = firebase.messaging();
