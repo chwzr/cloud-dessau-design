@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Product+Sans");
 
-
-body {
-  font-family: "Product Sans";
+.logo{
+  max-height: 100px;
 }
+
+$family-sans-serif: "Product Sans", sans-serif;
+
+@import "../node_modules/bulma/bulma.sass";
