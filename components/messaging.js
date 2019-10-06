@@ -19,8 +19,8 @@ const Push = () => {
   return (
     <>
       <div>
-        <div className="button" onClick={getToken}>
-          GET PUSH
+        <div className="button is-primary is-medium" onClick={getToken}>
+          Bin dabei!
         </div>
 
         <div className="code">

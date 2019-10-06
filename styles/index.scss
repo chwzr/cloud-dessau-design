@@ -4,6 +4,15 @@
   max-height: 100px;
 }
 
+.illo-hero{
+  position: absolute;
+  bottom: 10vh;
+  right: 0px;
+}
+
+$primary: #000;
+
 $family-sans-serif: "Product Sans", sans-serif;
+
 
 @import "../node_modules/bulma/bulma.sass";

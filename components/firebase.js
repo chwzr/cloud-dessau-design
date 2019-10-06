@@ -29,7 +29,7 @@ if(process.browser){
   messaging.usePublicVapidKey("BHfApPgxFt25VeufNN7mK9jMCVGteCZb8P5ryH4CE5GOAgprtSTE74U8HVlc2pdo-ZGbw05cjkHgzHuzihouJ74");
   messaging.getToken().then((currentToken) => {
     if (currentToken) {
-      console.log(currentToken)
+      console.log("token: ", currentToken)
       window.pushtoken = currentToken;
       // sendTokenToServer(currentToken);
       // updateUIForPushEnabled(currentToken);
