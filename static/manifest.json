@@ -1,5 +1,5 @@
 {
-  "name": "[cloud] Dessau",
+  "name": "[cloud]",
   "short_name": "[cloud]",
   "icons": [
     {
@@ -15,7 +15,7 @@
   ],
   "background_color": "#000",
   "description": "Campus Platform at HS Anhalt Dessau",
-  "display": "fullscreen",
+  "display": "standalone",
   "start_url": "/",
   "theme_color": "#000"
 }
