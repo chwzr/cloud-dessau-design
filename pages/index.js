@@ -14,7 +14,7 @@ const Home = () => (
     <div className='hero'>
       <h1 className='title'>Welcome to cloud!</h1>
       <p className='description'>
-       Rewrite.
+       Rewrite. Now!
       </p>
 
       <div className='row'>
