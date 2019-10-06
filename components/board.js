@@ -2,6 +2,8 @@ import React, {useState, useRef} from 'react'
 import {db} from '../components/firebase'
 
 import BoardWriter from './boardWriter'
+import * as moment from 'moment';
+
 
 const Board = () => {
 
@@ -17,11 +19,14 @@ const Board = () => {
         let nt = []
         snaps.forEach(snap=>{
           let d = snap.data();
-          console.log(d)
+          // console.log(d.created.toDate())
+          d.created = d.created.toDate()
           nt.push(d);
         })
         setTiles(nt)
-        list.current.scrollTop = list.current.scrollHeight;
+        if(list.current){
+          list.current.scrollTop = list.current.scrollHeight;
+        }
         
       })
     }
@@ -36,11 +41,13 @@ const Board = () => {
         <h1 className="title">Board</h1><br/>
         <div className="columns">
           <div className="column">
+            <div className="fade"></div>
             <div className="board" ref={list}>
               {tiles.map((tile,i) => <>
-                <article class="message fadein" key={i}>
+                <article class="message fadein is-marginless	" key={i}>
                   <div className="message-body" >{tile.content}</div>
                 </article>
+                <div className="time has-text-right is-size-7 has-text-grey-light	">{moment(tile.created).fromNow()}</div>
               </> )}
             </div>
           </div>

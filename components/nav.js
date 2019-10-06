@@ -9,11 +9,16 @@ const Nav = () => (
         <a className="navbar-item" href="/">
           <Logo width="112" height="28" className="logo"/>
         </a>
+        <Link href="/board" as="board">
+          <a className="navbar-item" href="/">
+            Board
+          </a>
+        </Link>
       </div>
 
 
 
-      
+
 
     </div>
   </nav>
