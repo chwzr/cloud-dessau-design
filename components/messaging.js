@@ -41,13 +41,16 @@ const Push = () => {
   return (
     <>
       <div>
-        <div className="button is-primary is-medium" onClick={getToken}>
-          Bin dabei!
-        </div>
-
-        <div className="code">
-          {process.browser && window.pushtoken}
-        </div> 
+        {process.browser && !window.pushtoken && <>
+          <div className="button is-primary is-medium" onClick={getToken}>
+            Bin dabei!
+          </div>
+        </>}
+        {process.browser && window.pushtoken && <>
+          <div className="button is-primary is-medium" onClick={getToken}>
+            Du bist dabei!
+          </div>
+        </>}
       </div>
     </>
   )
