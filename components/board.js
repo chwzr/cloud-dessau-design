@@ -36,9 +36,6 @@ const Board = () => {
         <h1 className="title">Board</h1><br/>
         <div className="columns">
           <div className="column">
-            <BoardWriter/>
-          </div>
-          <div className="column">
             <div className="board" ref={list}>
               {tiles.map((tile,i) => <>
                 <article class="message fadein" key={i}>
@@ -46,6 +43,9 @@ const Board = () => {
                 </article>
               </> )}
             </div>
+          </div>
+          <div className="column">
+            <BoardWriter/>
           </div>
         </div>
       </div>
