@@ -15,7 +15,7 @@
   ],
   "background_color": "#000",
   "description": "Campus Platform at HS Anhalt Dessau",
-  "display": "standalone",
+  "display": "minimal-ui",
   "start_url": "/",
   "theme_color": "#000"
 }
