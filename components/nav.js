@@ -7,7 +7,7 @@ const Nav = () => (
     <div className="container">
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
-          <Logo width="112" height="28"/>
+          <Logo width="112" height="28" className="logo"/>
         </a>
       </div>
 
