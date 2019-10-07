@@ -25,7 +25,7 @@ try{
 
 export const db = firebase.firestore();
 
-if(process.browser){
+if(process.browser && firebase.messaging.isSupported()){
   var messaging = firebase.messaging();
   messaging.usePublicVapidKey("BHfApPgxFt25VeufNN7mK9jMCVGteCZb8P5ryH4CE5GOAgprtSTE74U8HVlc2pdo-ZGbw05cjkHgzHuzihouJ74");
   messaging.getToken().then((currentToken) => {
