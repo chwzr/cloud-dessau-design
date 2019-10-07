@@ -38,7 +38,11 @@ const Board = () => {
   return (
     <section className="section">
       <div className="container">
-        <h1 className="title">Board</h1><br/>
+        <h1 className="title">Board &nbsp;
+          <span class="tag is-primary">
+            beta
+          </span>
+        </h1><br/>
         <div className="columns">
           <div className="column">
             <div className="fade"></div>
