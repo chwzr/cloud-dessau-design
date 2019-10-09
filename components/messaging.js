@@ -43,7 +43,7 @@ const Push = () => {
       <div>
         {process.browser && !window.pushtoken && <>
           <div className="button is-primary is-medium" onClick={getToken}>
-            Bin dabei!
+            Yes I do!
           </div>
         </>}
         {process.browser && window.pushtoken && <>

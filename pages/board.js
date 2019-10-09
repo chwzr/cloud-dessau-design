@@ -1,28 +1,17 @@
 import React from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
-import '../styles/index.scss'
+import Layout from '../components/layout'
+import Xboard from '../components/board'
 
-import '../components/firebase'
-import Messaging from '../components/messaging'
-import Nav from '../components/nav'
-import Board from '../components/board'
 
-const Home = () => (
-  <div>
-    <Head>
-      <title>[cloud] Board</title>
-      <link rel="manifest" href="/static/manifest.json" />
-      <meta name="theme-color" content="#000000" />
-      <meta
-        name="description"
-        content="Shaping Campus Life"
-      />
-    </Head>
-    <Nav/>
 
-    <Board/>
-  </div>
+import Messaging from '../components/layout'
+
+import XBoard from '../components/board'
+
+const Board = () => (
+  <Layout>
+    <XBoard/>
+  </Layout>
 )
 
-export default Home
+export default Board

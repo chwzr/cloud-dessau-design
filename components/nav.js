@@ -14,6 +14,11 @@ const Nav = () => (
             Board
           </a>
         </Link>
+        <Link href="/qa" as="qa">
+          <a className="navbar-item" href="/">
+            Q&A
+          </a>
+        </Link>
       </div>
 
 

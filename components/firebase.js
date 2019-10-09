@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import "firebase/analytics";
 import "firebase/messaging";
 import "firebase/firestore";
+import "firebase/storage"
 
 
 var firebaseConfig = {
@@ -9,7 +10,7 @@ var firebaseConfig = {
   authDomain: "cloud-dessau-design.firebaseapp.com",
   databaseURL: "https://cloud-dessau-design.firebaseio.com",
   projectId: "cloud-dessau-design",
-  storageBucket: "",
+  storageBucket: "cloud-dessau-design.appspot.com",
   messagingSenderId: "1026750393563",
   appId: "1:1026750393563:web:919229eda2ee388c9970fe",
   measurementId: "G-36EJZWWL0V"
@@ -24,6 +25,7 @@ try{
 
 
 export const db = firebase.firestore();
+export const storage = firebase.storage();
 
 if(process.browser && firebase.messaging.isSupported()){
   var messaging = firebase.messaging();

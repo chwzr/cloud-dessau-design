@@ -6,6 +6,15 @@
   }
 }
 
+
+@media (prefers-color-scheme: dark){
+  .logo{
+    path{
+      fill: #fff;
+    }
+  }
+}
+
 .illo-hero{
   position: absolute;
   bottom: 10vh;
@@ -25,6 +34,15 @@
   z-index: 100; 
 } 
 
+@media (prefers-color-scheme: dark){
+  .fade{
+      background: -webkit-linear-gradient(
+        rgba(23, 24, 28, 1) 0%,
+        rgba(23, 24, 28, 0) 100%
+      );
+    }
+}
+
 
 .fadein {
   animation: fadein 1s;
@@ -36,14 +54,24 @@
 }
 
 .board{
-  height: 400px;
+  height: 40vh;
   overflow: scroll;
   scroll-behavior: smooth;
 }
 
-$primary: #000;
+.clickable{
+  cursor: pointer;
+}
+
+.pd-top{
+  margin-top: 4px;
+}
+
+
+$primary: hsl(204, 86%, 53%);
 
 $family-sans-serif: "Product Sans", sans-serif;
 
 
 @import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/bulma-prefers-dark/bulma-prefers-dark.sass";

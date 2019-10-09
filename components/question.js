@@ -2,26 +2,32 @@ import React, {useRef} from 'react'
 
 import {db} from '../components/firebase'
 
-const BoardWriter = () => {
+const QuestionWriter = () => {
 
   const inputEl = useRef(null);
 
   const sendMessage = () => {
     if(inputEl.current.value){
-      db.collection('board').add({content: inputEl.current.value, created: new Date()}).then(()=>{
+      db.collection('qa').add({
+        question: inputEl.current.value, 
+        created: new Date(),
+        answered: false
+      })
+      .then(()=>{
         inputEl.current.value = ""
       })
     }
   }
 
   return (
-    <div>
+    <div className="box"> 
+              <p>
+        We supply the answers to your searching questions. All together. Do you have a burning question?
+        </p><br/>
       <div className="field">
-        <label className="label">Spread the Word!</label>
         <div className="control">
-          <textarea ref={inputEl} className="textarea" type="text" placeholder="Your Message" />
+          <input ref={inputEl} className="input" type="text" placeholder="Your Question" />
         </div>
-        <p className="help">Be kind!</p>
       </div>
       <div className="control">
         <button onClick={sendMessage} className="button is-primary">Submit</button>
@@ -30,4 +36,4 @@ const BoardWriter = () => {
   )
 }
 
-export default BoardWriter
+export default QuestionWriter

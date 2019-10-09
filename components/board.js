@@ -7,7 +7,7 @@ import * as moment from 'moment';
 
 const Board = () => {
 
-  const [tiles, setTiles] = useState([{content: "test"}, {content: "test2"}])
+  const [tiles, setTiles] = useState([])
   const [listening, setListening] = useState(false);
   const list = useRef(null);
   // let test = [{content: "test"}, {content: "test2"}]
@@ -39,7 +39,7 @@ const Board = () => {
     <section className="section">
       <div className="container">
         <h1 className="title">Board &nbsp;
-          <span class="tag is-primary">
+          <span className="tag is-warning">
             beta
           </span>
         </h1><br/>
@@ -47,12 +47,12 @@ const Board = () => {
           <div className="column">
             <div className="fade"></div>
             <div className="board" ref={list}>
-              {tiles.map((tile,i) => <>
-                <article class="message fadein is-marginless	" key={i}>
+              {tiles.map((tile,i) => <div key={i}>
+                <article className="message fadein is-marginless	" >
                   <div className="message-body" >{tile.content}</div>
                 </article>
                 <div className="time has-text-right is-size-7 has-text-grey-light	">{moment(tile.created).fromNow()}</div>
-              </> )}
+              </div> )}
             </div>
           </div>
           <div className="column">
