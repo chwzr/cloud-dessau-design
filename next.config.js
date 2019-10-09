@@ -23,7 +23,6 @@ const nextConfig = withSass({
         handler: 'StaleWhileRevalidate',
         options: {
           cacheName: 'https-calls',
-          networkTimeoutSeconds: 15,
           expiration: {
             maxEntries: 150,
             maxAgeSeconds: 24 * 60 * 60, // 1 day
