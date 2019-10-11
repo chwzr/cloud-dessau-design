@@ -11,7 +11,7 @@ const Home = () => (
         <div className="columns">
           <div className="column is-two-thirds">
             <h2 className="subtitle">
-              The <strong>[cloud]</strong> is our concept for building a student community out of a room. We are creating a platform that brings together different characters to connect and interchange. It is a place to get together, work, discuss or simply have a coffee! ...
+              The <strong>[cloud]</strong> is our concept for building a student community out of a room. We are creating a platform that brings together different characters to connect and interchange. It is a place to get together, work, discuss or simply have a coffee! ... v3
             </h2>
           </div>
         </div>
