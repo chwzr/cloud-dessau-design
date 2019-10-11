@@ -8,7 +8,7 @@ const Home = () => (
     <section className="section hero is-fullheight-with-navbar">
       <div className="container">
           <div className="columns is-multiline">
-              <div className="column is-half">
+              <div className="column is-one-third">
                 <h1 className="title">Shaping Campus Life</h1><br/>
                 <div className="columns">
                   <div className="column is-two-thirds">
@@ -18,7 +18,7 @@ const Home = () => (
                   </div>
                 </div>
               </div>
-              <div className="column is-half">
+              <div className="column is-one-third">
                 
                 <img src="/static/hero_illo_v2.svg" width={300} className="illo-hero" />
               </div>

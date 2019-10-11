@@ -4,12 +4,14 @@ import React, {useState} from 'react'
 
 const Push = () => {
   console.log("v 1")
-  let p = false;
+  var p = true;
+  var ns = false
 
   if(process.browser){
     if(("Notification" in window)){
       p =  process.browser && Notification.permission === "granted"
     }
+    ns = !("Notification" in window)
   }
 
   const [permission, setPermission]  = useState(p)
@@ -27,29 +29,30 @@ const Push = () => {
     }
   }
 
-  // if(process.browser){
-  //   let p = Notification.permission === "granted"
-  //   setPermission( p );
-  // }
-
   return (
-
-      <div className="box">
-
+          <>
         {!permission && <div>
-            <p>
-              Do you want to get informed whats happening @ <strong>[cloud]</strong> ? 
-            </p><br/>
-            <button className="button is-primary" onClick={getToken}>
-              Yes I do!
-            </button>
+            <div className="box">
+                <p>
+                  Do you want to get informed whats happening @ <strong>[cloud]</strong> ? 
+                </p><br/>
+                <button className="button is-primary" onClick={getToken}>
+                  Yes I do!
+                </button>
+            </div>
           </div>
         }
 
-        {/* {permission && <div> You will get Notifications </div>} */}
-
-      </div>
-  )
+        {ns && <div className="box">
+          <p>
+            Sorry Apple is not supporting a open Web.
+            We are working on Push Notifications on iOS.
+          </p>
+        </div>}
+        
+        
+        </>
+        )
 }
 
 export default Push
