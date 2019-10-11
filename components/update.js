@@ -9,9 +9,16 @@ const Update = () => {
     }
   }
 
+  const clearCache = () => {
+    if ('caches' in window) {
+      console.log("delete")
+      caches.delete('https-calls');
+    } 
+  }
+
   return (
     <div>
-      <button className="button">Update Me</button>
+      <button className="button" onClick={clearCache}>Update Me</button>
     </div>
   )
 }
