@@ -42,9 +42,10 @@ const Board = () => {
           <span className="tag is-warning">
             beta
           </span>
-        </h1><br/>
-        <div className="columns">
-          <div className="column">
+        </h1>
+        <p>A live messaging service.</p><br/>
+        <div className="columns is-multiline">
+          <div className="column is-half">
             <div className="fade"></div>
             <div className="board" ref={list}>
               {tiles.map((tile,i) => <div key={i}>
@@ -55,7 +56,8 @@ const Board = () => {
               </div> )}
             </div>
           </div>
-          <div className="column">
+          <div className="column is-half"></div>
+          <div className="column is-half">
             <BoardWriter/>
           </div>
         </div>

@@ -3,7 +3,6 @@ import React, {useState} from 'react'
 
 
 const Push = () => {
-  console.log("v 1")
   var p = true;
   var ns = false
 
@@ -33,6 +32,7 @@ const Push = () => {
           <>
         {!permission && <div>
             <div className="box">
+                <h3 className="is-size-4">Notifications</h3><br/>
                 <p>
                   Do you want to get informed whats happening @ <strong>[cloud]</strong> ? 
                 </p><br/>

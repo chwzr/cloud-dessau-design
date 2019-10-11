@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import cloud from './cloud'
 
 
-const Update = () => {
+const Update = (props) => {
 
   const [update, setUpdate] = useState(true)
 
@@ -28,17 +28,20 @@ const Update = () => {
   }
 
   cloud.firestore().collection('version').doc('version').get().then((snap)=>{
-    setUpdate(snap.data().version === '1.1')
+    setUpdate(snap.data().version === '1.2')
   })
 
   if(!update) {
     return (
-      <div className="box">
-        <h2 className="is-2">There is a new version of the Cloud App</h2><br/>
-        <button className="button is-primary" onClick={clearCache}>Click to refresh!</button>
+      <div className="column is-one-quarter">
+        <div className="box">
+          <h2 className="is-2">There is a new version of the Cloud App</h2><br/>
+          <button className="button is-primary" onClick={clearCache}>Click to refresh!</button>
+        </div>
       </div>
     )
   } else return null;
 }
+
 
 export default Update
