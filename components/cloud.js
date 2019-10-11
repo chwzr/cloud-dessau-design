@@ -26,8 +26,10 @@ if(process.browser){
   //init on client side
   console.log("init Analytics")
   cloud.analytics();
+  if(firebase.messaging.isSupported()){
     console.log("init Messaging")
     cloud.messaging().usePublicVapidKey("BHfApPgxFt25VeufNN7mK9jMCVGteCZb8P5ryH4CE5GOAgprtSTE74U8HVlc2pdo-ZGbw05cjkHgzHuzihouJ74");
+  }
 }
 
 export default cloud
