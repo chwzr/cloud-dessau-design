@@ -3,8 +3,11 @@ import React, {useState} from 'react'
 
 
 const Push = () => {
-
-  let p = process.browser && Notification.permission === "granted"
+  console.log("v 1")
+  let p = false;
+  if(("Notification" in window)){
+    p =  process.browser && Notification.permission === "granted"
+  }
 
   const [permission, setPermission]  = useState(p)
   const getToken = () => {
