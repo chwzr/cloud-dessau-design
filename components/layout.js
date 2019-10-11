@@ -19,6 +19,7 @@ const Layout = (props) => {
         name="description"
         content="Campus Platform"
       />
+      <link rel="apple-touch-icon" href="/static/icon-512.png"/>
     </Head>
     <Nav/>
     {props.children}

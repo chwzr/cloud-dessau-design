@@ -24,6 +24,7 @@ const Update = () => {
 
   return (
     <div>
+       icon test
       <button className="button" onClick={clearCache}>Update Me</button>
     </div>
   )
