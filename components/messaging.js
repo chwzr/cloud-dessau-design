@@ -1,37 +1,46 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 
 
 const Push = () => {
 
+  let p = process.browser && Notification.permission === "granted"
+
+  const [permission, setPermission]  = useState(p)
   const getToken = () => {
     Notification.requestPermission().then((permission) => {
       if (permission === 'granted') {
         console.log('Notification permission granted.');
+        setPermission(true)
       } else {
         console.log('Unable to get permission to notify.');
+        setPermission(false)
       }
     });    
   }
 
+  // if(process.browser){
+  //   let p = Notification.permission === "granted"
+  //   setPermission( p );
+  // }
+
   return (
-    <>
+
       <div>
-        Do you want to get Push Notifications?
-      </div>
-      <div>
-        {process.browser && !window.pushtoken && <>
-          <div className="button is-primary is-medium" onClick={getToken}>
-            Yes I do!
+
+        {!permission && <div>
+            <p>
+              Do you want to get informed whats happening @ <strong>[cloud]</strong> ? 
+            </p><br/>
+            <button className="button is-primary is-medium" onClick={getToken}>
+              Yes I do!
+            </button>
           </div>
-        </>}
-        {process.browser && window.pushtoken && <>
-          <div className="button is-primary is-medium" onClick={getToken}>
-            Du bist dabei!
-          </div>
-        </>}
+        }
+
+        {/* {permission && <div> You will get Notifications </div>} */}
+
       </div>
-    </>
   )
 }
 
