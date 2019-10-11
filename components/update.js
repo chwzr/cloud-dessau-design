@@ -2,10 +2,12 @@ import React from 'react';
 
 const Update = () => {
 
-  if ('serviceWorker' in navigator) {
-    var workerContainerInstance = navigator.serviceWorker;
-    console.log(workerContainerInstance)
-    // Supported!
+  if(process.browser){
+    if ('serviceWorker' in navigator) {
+      var workerContainerInstance = navigator.serviceWorker;
+      console.log(workerContainerInstance)
+      // Supported!
+    }
   }
 
   return (
