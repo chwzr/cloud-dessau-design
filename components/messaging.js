@@ -5,8 +5,11 @@ import React, {useState} from 'react'
 const Push = () => {
   console.log("v 1")
   let p = false;
-  if(("Notification" in window)){
-    p =  process.browser && Notification.permission === "granted"
+
+  if(process.browser){
+    if(("Notification" in window)){
+      p =  process.browser && Notification.permission === "granted"
+    }
   }
 
   const [permission, setPermission]  = useState(p)
