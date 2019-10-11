@@ -49,7 +49,7 @@ const Board = () => {
             <div className="board" ref={list}>
               {tiles.map((tile,i) => <div key={i}>
                 <article className="message fadein is-marginless	" >
-                  <div className="message-body" >{tile.content}</div>
+                  <div className="message-body">{tile.content}</div>
                 </article>
                 <div className="time has-text-right is-size-7 has-text-grey-light	">{moment(tile.created).fromNow()}</div>
               </div> )}
