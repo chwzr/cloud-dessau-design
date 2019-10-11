@@ -34,13 +34,13 @@ const Push = () => {
 
   return (
 
-      <div>
+      <div className="box">
 
         {!permission && <div>
             <p>
               Do you want to get informed whats happening @ <strong>[cloud]</strong> ? 
             </p><br/>
-            <button className="button is-primary is-medium" onClick={getToken}>
+            <button className="button is-primary" onClick={getToken}>
               Yes I do!
             </button>
           </div>

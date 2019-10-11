@@ -17,15 +17,16 @@ const Update = () => {
           keys.forEach(key => {
             caches.delete(key);
           })
+          window.location.reload();
         })
       } 
     }
   }
 
   return (
-    <div>
-       icon test
-      <button className="button" onClick={clearCache}>Update Me</button>
+    <div className="box">
+      <h2 className="is-2">There is a new version of the Cloud App</h2><br/>
+      <button className="button is-primary" onClick={clearCache}>Click to refresh!</button>
     </div>
   )
 }
