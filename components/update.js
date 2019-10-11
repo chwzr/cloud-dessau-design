@@ -10,10 +10,12 @@ const Update = () => {
   }
 
   const clearCache = () => {
-    if ('caches' in window) {
-      console.log("delete")
-      caches.delete('https-calls');
-    } 
+    if(process.browser){
+      if ('caches' in window) {
+        console.log("delete")
+        caches.delete('https-calls');
+      } 
+    }
   }
 
   return (
