@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Messaging from '../components/messaging'
+import Update  from '../components/update'
 
 const Home = () => (
   <Layout>
@@ -16,6 +17,8 @@ const Home = () => (
         </div>
 
       <Messaging></Messaging>
+      <br/>
+      <Update/>
       </div>
       <img src="/static/project_create_illo_end@2x.png" width={500} className="illo-hero" />
     </section>
