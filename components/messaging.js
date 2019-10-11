@@ -8,15 +8,17 @@ const Push = () => {
 
   const [permission, setPermission]  = useState(p)
   const getToken = () => {
-    Notification.requestPermission().then((permission) => {
-      if (permission === 'granted') {
-        console.log('Notification permission granted.');
-        setPermission(true)
-      } else {
-        console.log('Unable to get permission to notify.');
-        setPermission(false)
-      }
-    });    
+    if(("Notification" in window)){
+        Notification.requestPermission().then((permission) => {
+          if (permission === 'granted') {
+            console.log('Notification permission granted.');
+            setPermission(true)
+          } else {
+            console.log('Unable to get permission to notify.');
+            setPermission(false)
+          }
+        });    
+    }
   }
 
   // if(process.browser){
