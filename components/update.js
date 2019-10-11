@@ -12,8 +12,12 @@ const Update = () => {
   const clearCache = () => {
     if(process.browser){
       if ('caches' in window) {
-        console.log("delete")
-        caches.delete('https-calls');
+        caches.keys().then(keys => {
+          // keys is an array with the list of keys
+          keys.forEach(key => {
+            caches.delete(key);
+          })
+        })
       } 
     }
   }
