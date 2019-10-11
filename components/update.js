@@ -5,8 +5,7 @@ const Update = () => {
   if(process.browser){
     if ('serviceWorker' in navigator) {
       var workerContainerInstance = navigator.serviceWorker;
-      console.log(workerContainerInstance)
-      // Supported!
+      console.log(workerContainerInstance);
     }
   }
 
