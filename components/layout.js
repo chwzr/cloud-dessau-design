@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head'
 import Nav from './nav'
 import '../styles/index.scss'
-import '../components/firebase'
+
 
 
 const Layout = (props) => {
@@ -17,7 +17,7 @@ const Layout = (props) => {
       <meta name="theme-color" content="#000000" />
       <meta
         name="description"
-        content="make your Next.js application work offline using service workers via Google's workbox"
+        content="Campus Platform"
       />
     </Head>
     <Nav/>

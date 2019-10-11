@@ -1,6 +1,6 @@
 import React, {useRef} from 'react'
 
-import {db} from '../components/firebase'
+import cloud from './cloud'
 
 const QuestionWriter = () => {
 
@@ -8,7 +8,7 @@ const QuestionWriter = () => {
 
   const sendMessage = () => {
     if(inputEl.current.value){
-      db.collection('qa').add({
+      cloud.firestore().collection('qa').add({
         question: inputEl.current.value, 
         created: new Date(),
         answered: false

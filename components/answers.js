@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import * as moment from 'moment';
-import {db} from '../components/firebase'
+import cloud from './cloud'
 import Link from 'next/link'
 import ReactPlayer from 'react-player'
 import QuestionWriter from './question'
@@ -15,7 +15,7 @@ const Answers = () => {
   const listener = () =>{
     if(!listening) {
       setListening(true)
-      db.collection('qa').orderBy("created", "asc").onSnapshot((snaps)=>{
+      cloud.firestore().collection('qa').orderBy("created", "asc").onSnapshot((snaps)=>{
         let answers = []
         let questions = []
         snaps.forEach(snap=>{
@@ -57,7 +57,7 @@ const Answers = () => {
 
         <h2 className="is-size-2">Open Questions - click to answer</h2><br/>
         <div className="columns is-multiline">
-          { questions.map(q=>(<>
+          { questions.map(q=>(
             <div className="column is-one-quarter" key={q.id}>
             <Link href="/question/[id]" as={`/question/${q.id}`}>
               <a className="box clickable">
@@ -66,15 +66,15 @@ const Answers = () => {
               </a>
             </Link>
             </div> 
-          </>))}
+          ))}
         </div>
 
         <h2 className="is-size-2">Answers - enjoy wisdom</h2><br/>
         <div className="columns is-multiline">
         { answers.map(a=>(<div key={a.id} className="column is-one-quarter" >
-          
+        
             <div className="card">
-                <div class="card-image">
+                <div className="card-image">
                   {a.video && <ReactPlayer controls url={a.video} height="auto" width="100%"></ReactPlayer>}
                 </div>
                 <div className="card-content">

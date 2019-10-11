@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react'
-import {db} from '../components/firebase'
+import cloud from './cloud'
 
 import BoardWriter from './boardWriter'
 import * as moment from 'moment';
@@ -15,7 +15,7 @@ const Board = () => {
   const listener = () =>{
     if(!listening) {
       setListening(true)
-      db.collection('board').orderBy("created", "asc").onSnapshot((snaps)=>{
+      cloud.firestore().collection('board').orderBy("created", "asc").onSnapshot((snaps)=>{
         let nt = []
         snaps.forEach(snap=>{
           let d = snap.data();

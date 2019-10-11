@@ -2,7 +2,7 @@ import React, {useState, useRef} from 'react'
 import { useRouter } from 'next/router';
 import Layout from '../../components/layout';
 import VideoUpload from '../../components/videoUpload';
-import {db, storage} from '../../components/firebase'
+import cloud from '../../components/cloud'
 
 
 export default function Post() {
@@ -12,7 +12,7 @@ export default function Post() {
   const [progress, setProgress] = useState(0)
 
   const getQuestion = () => {
-    db.collection('qa').doc(router.query.id).onSnapshot(snap=>{
+    cloud.firestore().collection('qa').doc(router.query.id).onSnapshot(snap=>{
       setQuestion(snap.data());
     })
   }
@@ -33,7 +33,7 @@ export default function Post() {
   const sendMessage = () => {
 
     if(file){
-      var uploadTask = storage.ref('answers').child(new Date() + file.name).put(file);
+      var uploadTask = cloud.storage().ref('answers').child(new Date() + file.name).put(file);
       uploadTask.on('state_changed', (snapshot) => {
         // Observe state change events such as progress, pause, and resume
         // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
@@ -63,7 +63,7 @@ export default function Post() {
       
     } else {
       if(inputEl.current.value){
-        db.collection('qa').doc(router.query.id)
+        cloud.firestore().collection('qa').doc(router.query.id)
           .update(
             {
               answer: inputEl.current.value, 

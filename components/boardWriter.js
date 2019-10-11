@@ -1,6 +1,6 @@
 import React, {useRef} from 'react'
 
-import {db} from '../components/firebase'
+import cloud from './cloud'
 
 const BoardWriter = () => {
 
@@ -8,7 +8,7 @@ const BoardWriter = () => {
 
   const sendMessage = () => {
     if(inputEl.current.value){
-      db.collection('board').add({content: inputEl.current.value, created: new Date()}).then(()=>{
+      cloud.firestore().collection('board').add({content: inputEl.current.value, created: new Date()}).then(()=>{
         inputEl.current.value = ""
       })
     }
