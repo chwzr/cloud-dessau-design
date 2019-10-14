@@ -13,31 +13,13 @@ const Feed = (props) => {
   <div>
     <Head>
       <title>[cloud]</title>
-      <link rel="manifest" href="/static/manifest.json" />
-      <meta name="theme-color" content="#000000" />
-      <meta
-        name="description"
-        content="Campus Platform"
-      />
-      <link rel="apple-touch-icon" href="/static/icon-512.png"/>
     </Head>
-    {/* <section className="section">
-      <div className="content widem">
-        <div className="columns is-multiline">
-            {props.feed.map((item, i)=>(
-                <div key={i} className="column is-one-third">
-                      <img src={item.node.display_url} className="instapic"/>
-                </div>
-            ))}
-        </div>
-      </div>
-    </section> */}
     <div className="instacenter">
       <h2 className="is-size-2 marge">instagram.com/cloud_dessau</h2>
     </div>
-    <div className="instacenter">
-      <img src={props.feed ? props.feed[0].node.display_url : ""} className="instafull"/>
-    </div>
+      <div className="instacenter">
+        <img src={props.feed ? props.feed[0].node.display_url : ""} className="instafull"/>
+      </div>
     
    </div>
 )
