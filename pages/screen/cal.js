@@ -24,13 +24,15 @@ const Cal = (props) => {
       />
       <link rel="apple-touch-icon" href="/static/icon-512.png"/>
     </Head>
-    <br/><br/>
-    <div className="columns is-centered">
-      <Logo width="112" height="28" className="logo"/>
-    </div>
+    <div className="content">
+      <br/><br/>
       <div className="columns is-centered">
-          <Calendar events={props.events}/>
+        <Logo width="112" height="28" className="logo"/>
       </div>
+        <div className="columns is-centered">
+            <Calendar events={props.events}/>
+        </div>
+    </div>
     {/* <Nav/> */}
    </div>
 )
