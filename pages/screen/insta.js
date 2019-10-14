@@ -1,7 +1,5 @@
 import React from 'react';
 import Head from 'next/head'
-import Nav from '../../components/nav'
-import Calendar  from '../../components/calendar_screen'
 import '../../styles/index.scss'
 import fetch from 'isomorphic-unfetch';
 
