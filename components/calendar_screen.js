@@ -7,7 +7,7 @@ const Calendar = (props) =>  {
 
 
   return (
-    <div className="column is-one-third">
+    <div className="column is-one-third ccc">
       <div className="box">
         <h2 className="is-size-4">Next Events</h2><br/>
           {props.events && props.events.map((event, i) => (
