@@ -26,10 +26,10 @@ const Cal = (props) => {
     </Head>
     <div className="content full">
       <br/><br/>
-      <div className="columns is-centered">
+      <div className="columns is-mobile is-centered widex">
         <Logo width="112" height="28" className="logo"/>
       </div>
-        <div className="columns is-centered">
+        <div className="columns is-mobile is-centered widex">
             <Calendar events={props.events}/>
         </div>
     </div>
