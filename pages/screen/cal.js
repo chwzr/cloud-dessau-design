@@ -3,12 +3,14 @@ import Head from 'next/head'
 import Nav from '../../components/nav'
 import Calendar  from '../../components/calendar_screen'
 import '../../styles/index.scss'
-
+import fetch from 'isomorphic-unfetch';
 import Logo from '../../static/cloud_logo.svg'
+import * as moment from 'moment';
 
-const Layout = (props) => {
 
+const Cal = (props) => {
 
+  console.log(props)
 
   return (
   <div>
@@ -27,11 +29,20 @@ const Layout = (props) => {
       <Logo width="112" height="28" className="logo"/>
     </div>
       <div className="columns is-centered">
-          <Calendar/>
+          <Calendar events={props.events}/>
       </div>
     {/* <Nav/> */}
    </div>
 )
-  }
+}
 
-export default Layout
+Cal.getInitialProps = async function() {
+  let data = await fetch(`https://www.googleapis.com/calendar/v3/calendars/rvr1vpoap6v75n5l4u8388amoo@group.calendar.google.com/events?key=AIzaSyDz2264TI0D2iFVX1k4pOtUozr2jO8SLtU&maxResults=5&timeMin=${encodeURIComponent(moment().format())}&singleEvents=true&orderBy=startTime&`);
+  let json = await data.json();
+  console.log("OKK")
+  return {
+    events: json.items
+  }
+}
+
+export default Cal
