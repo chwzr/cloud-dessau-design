@@ -18,12 +18,12 @@ const nextConfig = withSass({
     runtimeCaching: [
       {
         urlPattern: /^https?.*/,
-        handler: 'StaleWhileRevalidate',
+        handler: 'CacheFirst',
         options: {
           cacheName: 'https-calls',
           expiration: {
-            maxEntries: 150,
-            maxAgeSeconds: 24 * 60 * 60, // 1 day
+            maxEntries: 200,
+            maxAgeSeconds: 24 * 60 * 60 * 30, // 1 Month
           },
           cacheableResponse: {
             statuses: [0, 200],
