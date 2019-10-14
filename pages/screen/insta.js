@@ -24,10 +24,10 @@ const Feed = (props) => {
       <link rel="apple-touch-icon" href="/static/icon-512.png"/>
     </Head>
     <section className="section">
-      <div className="content">
+      <div className="content widem">
         <div className="columns is-multiline">
             {props.feed.map(item=>(
-                <div className="column  is-one-third">
+                <div className="column is-one-third">
                       <img src={item.node.display_url} className="instapic"/>
                 </div>
             ))}
