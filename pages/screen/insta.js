@@ -21,7 +21,7 @@ const Feed = (props) => {
       />
       <link rel="apple-touch-icon" href="/static/icon-512.png"/>
     </Head>
-    <section className="section">
+    {/* <section className="section">
       <div className="content widem">
         <div className="columns is-multiline">
             {props.feed.map((item, i)=>(
@@ -31,7 +31,11 @@ const Feed = (props) => {
             ))}
         </div>
       </div>
-    </section>
+    </section> */}
+    <div className="instacenter">
+      <img src={props.feed[0].node.display_url} className="instafull"/>
+    </div>
+    
    </div>
 )
 }
