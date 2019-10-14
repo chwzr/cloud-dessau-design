@@ -6,7 +6,7 @@ import fetch from 'isomorphic-unfetch';
 
 const Feed = (props) => {
 
-  console.log(props.feed)
+  // console.log(props.feed)
 
 
   return (
@@ -24,8 +24,8 @@ const Feed = (props) => {
     <section className="section">
       <div className="content widem">
         <div className="columns is-multiline">
-            {props.feed.map(item=>(
-                <div className="column is-one-third">
+            {props.feed.map((item, i)=>(
+                <div key={i} className="column is-one-third">
                       <img src={item.node.display_url} className="instapic"/>
                 </div>
             ))}
@@ -37,10 +37,10 @@ const Feed = (props) => {
 }
 
 Feed.getInitialProps = async function() {
-  console.log("LOAD")
+  // console.log("LOAD")
   let data = await fetch(`https://www.instagram.com/cloud_dessau/?__a=1`);
   let json = await data.json();
-  console.log(json)
+  // console.log(json)
   return {
     feed: json.graphql.user.edge_owner_to_timeline_media.edges
   }
