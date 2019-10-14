@@ -24,7 +24,7 @@ const Cal = (props) => {
       />
       <link rel="apple-touch-icon" href="/static/icon-512.png"/>
     </Head>
-    <div className="content">
+    <div className="content full">
       <br/><br/>
       <div className="columns is-centered">
         <Logo width="112" height="28" className="logo"/>
