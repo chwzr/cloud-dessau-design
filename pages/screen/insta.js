@@ -36,7 +36,7 @@ const Feed = (props) => {
       <h2 className="is-size-2 marge">instagram.com/cloud_dessau</h2>
     </div>
     <div className="instacenter">
-      <img src={props.feed[0].node.display_url} className="instafull"/>
+      <img src={props.feed ? props.feed[0].node.display_url : ""} className="instafull"/>
     </div>
     
    </div>
