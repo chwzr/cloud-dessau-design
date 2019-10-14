@@ -45,11 +45,17 @@ const Feed = (props) => {
 
 Feed.getInitialProps = async function() {
   // console.log("LOAD")
-  let data = await fetch(`https://www.instagram.com/cloud_dessau/?__a=1`);
-  let json = await data.json();
+  let json  = false
+  try{
+    let data = await fetch(`https://www.instagram.com/cloud_dessau/?__a=1`);
+    json = await data.json();
+  }
+  catch (error) {
+    console.log(error)
+  }
   // console.log(json)
   return {
-    feed: json.graphql.user.edge_owner_to_timeline_media.edges
+    feed: json ? json.graphql.user.edge_owner_to_timeline_media.edges : false
   }
 }
 
