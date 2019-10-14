@@ -4,13 +4,12 @@ import Nav from '../../components/nav'
 import Calendar  from '../../components/calendar_screen'
 import '../../styles/index.scss'
 import fetch from 'isomorphic-unfetch';
-import Logo from '../../static/cloud_logo.svg'
-import * as moment from 'moment';
 
 
-const Cal = (props) => {
+const Feed = (props) => {
 
-  console.log(props)
+  console.log(props.feed)
+
 
   return (
   <div>
@@ -24,20 +23,29 @@ const Cal = (props) => {
       />
       <link rel="apple-touch-icon" href="/static/icon-512.png"/>
     </Head>
-    <div className="content full">
-
-    </div>
+    <section className="section">
+      <div className="content">
+        <div className="columns is-multiline">
+            {props.feed.map(item=>(
+                <div className="column  is-one-third">
+                      <img src={item.node.display_url} className="instapic"/>
+                </div>
+            ))}
+        </div>
+      </div>
+    </section>
    </div>
 )
 }
 
-Cal.getInitialProps = async function() {
-  let data = await fetch(`https://www.googleapis.com/calendar/v3/calendars/rvr1vpoap6v75n5l4u8388amoo@group.calendar.google.com/events?key=AIzaSyDz2264TI0D2iFVX1k4pOtUozr2jO8SLtU&maxResults=5&timeMin=${encodeURIComponent(moment().format())}&singleEvents=true&orderBy=startTime&`);
+Feed.getInitialProps = async function() {
+  console.log("LOAD")
+  let data = await fetch(`https://www.instagram.com/cloud_dessau/?__a=1`);
   let json = await data.json();
-  console.log("OKK")
+  console.log(json)
   return {
-    events: json.items
+    feed: json.graphql.user.edge_owner_to_timeline_media.edges
   }
 }
 
-export default Cal
+export default Feed
