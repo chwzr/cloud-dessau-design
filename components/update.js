@@ -28,7 +28,7 @@ const Update = (props) => {
   }
 
   cloud.firestore().collection('version').doc('version').get().then((snap)=>{
-    setUpdate(snap.data().version === '1.2')
+    setUpdate(snap.data().version === '1.3')
   })
 
   if(!update) {
