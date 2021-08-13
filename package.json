@@ -18,7 +18,7 @@
     "isomorphic-fetch": "^2.2.1",
     "isomorphic-unfetch": "^3.0.0",
     "moment": "^2.24.0",
-    "next": "9.0.8",
+    "next": "11.1.0",
     "next-offline": "^4.0.6",
     "node-sass": "^4.12.0",
     "origen-react-instagram-feed": "^0.0.3",
